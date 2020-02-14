@@ -1,0 +1,43 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CrossKitTypes",
+        "repositoryURL": "https://github.com/RougeWare/Swift-Cross-Kit-Types.git",
+        "state": {
+          "branch": null,
+          "revision": "d64faa8d5e988352dff45e03a13da4f90c3a70e5",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "MultiplicativeArithmetic",
+        "repositoryURL": "https://github.com/RougeWare/Swift-MultiplicativeArithmetic.git",
+        "state": {
+          "branch": null,
+          "revision": "71e7201b4debe94fe7dca6f10d6b34c487f991b2",
+          "version": "1.2.0"
+        }
+      },
+      {
+        "package": "NonEmpty",
+        "repositoryURL": "https://github.com/pointfreeco/swift-nonempty.git",
+        "state": {
+          "branch": null,
+          "revision": "2eec250e2034b80b7d1a0b4a8fd2ce3977708fab",
+          "version": "0.2.1"
+        }
+      },
+      {
+        "package": "RectangleTools",
+        "repositoryURL": "https://github.com/RougeWare/Swift-Rectangle-Tools.git",
+        "state": {
+          "branch": null,
+          "revision": "bfd6c70d4913030031828408b104339ca2331903",
+          "version": "1.5.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
