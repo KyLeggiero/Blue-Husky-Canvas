@@ -45,19 +45,19 @@ let macOSPackage = Package(
 
 
 
-let iOSPackage = Package(
-    name: "\(sharedHumanReadableName) for iOS",
-    platforms: [.iOS(.v8)],
-    products: sharedProducts,
-    dependencies: sharedDependencies,
-    targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
-        .target(
-            name: "BlueHuskyCanvas",
-            dependencies: ["RectangleTools", "CrossKitTypes", "NonEmpty"]),
-        .testTarget(
-            name: "BlueHuskyCanvasTests",
-            dependencies: ["BlueHuskyCanvas"]),
-    ]
-)
+//let iOSPackage = Package(
+//    name: "\(sharedHumanReadableName) for iOS",
+//    platforms: [.iOS(.v8)],
+//    products: sharedProducts,
+//    dependencies: sharedDependencies,
+//    targets: [
+//        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
+//        // Targets can depend on other targets in this package, and on products in packages which this package depends on.
+//        .target(
+//            name: "BlueHuskyCanvas",
+//            dependencies: ["RectangleTools", "CrossKitTypes", "NonEmpty"]),
+//        .testTarget(
+//            name: "BlueHuskyCanvasTests",
+//            dependencies: ["BlueHuskyCanvas"]),
+//    ]
+//)
