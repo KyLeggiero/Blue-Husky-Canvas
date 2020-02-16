@@ -76,8 +76,8 @@ public extension CanvasObjectStyle.Stroke {
 
 
 public extension CanvasObjectStyle.Stroke {
-    public struct DashPhase {
-        var precedingGap: CGFlaot
+    struct DashPhase {
+        var precedingGap: CGFloat
         var solidLength: CGFloat
     }
 }
@@ -85,7 +85,7 @@ public extension CanvasObjectStyle.Stroke {
 
 
 public extension CanvasObjectStyle {
-    public struct Shadow {
+    struct Shadow {
         var color: NativeColor
         var offset: CGPoint
         var blur: CGFloat

@@ -13,5 +13,15 @@ import Foundation
 public protocol CanvasObject {
     var bézierShape: BézierShape { get }
     var aspectRatioLock: CGSize { get }
-    var style: Style
+    var style: Style { get }
+    var position: CGRect { get }
+}
+
+
+
+public protocol MutableCanvasObject: CanvasObject {
+    var bézierShape: BézierShape { get set }
+    var aspectRatioLock: CGSize { get set }
+    var style: Style { get set }
+    var position: CGRect { get set }
 }
