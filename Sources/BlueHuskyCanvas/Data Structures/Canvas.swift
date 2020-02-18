@@ -11,5 +11,14 @@ import Foundation
 
 
 public struct Canvas {
-    var objects: [CanvasObject]
+    
+    public var objects: [CanvasObject]
+    public var limits: Limits
+    public var style: Style
+    
+    
+    
+    public init(objects: [CanvasObject] = []) {
+        self.objects = objects
+    }
 }
