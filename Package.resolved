@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Swift Color Swatches",
+        "repositoryURL": "https://github.com/RougeWare/Swift-Color-Swatches.git",
+        "state": {
+          "branch": "feature/MVP",
+          "revision": "08ee4eea289ff8878a1b13b184eaea0c905cabd1",
+          "version": null
+        }
+      },
+      {
         "package": "CrossKitTypes",
         "repositoryURL": "https://github.com/RougeWare/Swift-Cross-Kit-Types.git",
         "state": {
@@ -11,12 +20,30 @@
         }
       },
       {
+        "package": "Swift Drawing Tools",
+        "repositoryURL": "https://github.com/BenLeggiero/Swift-Drawing-Tools.git",
+        "state": {
+          "branch": "feature/MVP",
+          "revision": "b50ad42939fede6ae0089a63d61796ec9513e5bd",
+          "version": null
+        }
+      },
+      {
+        "package": "SwiftImage",
+        "repositoryURL": "https://github.com/koher/swift-image.git",
+        "state": {
+          "branch": null,
+          "revision": "377d71a9ce4404e255ab46166ad416c4d4871900",
+          "version": "0.7.0"
+        }
+      },
+      {
         "package": "MultiplicativeArithmetic",
         "repositoryURL": "https://github.com/RougeWare/Swift-MultiplicativeArithmetic.git",
         "state": {
           "branch": null,
-          "revision": "71e7201b4debe94fe7dca6f10d6b34c487f991b2",
-          "version": "1.2.0"
+          "revision": "38eee08151bbbefbbb422d02ff2c8da1a8b8bfe1",
+          "version": "1.3.0"
         }
       },
       {
@@ -33,8 +60,8 @@
         "repositoryURL": "https://github.com/RougeWare/Swift-Rectangle-Tools.git",
         "state": {
           "branch": null,
-          "revision": "54e1e057da5483fff9409cf85afb0f72e3e4877e",
-          "version": "2.4.0"
+          "revision": "bd3fbcf9c327838cb5eddc3a3ba38cb5f0ed8c37",
+          "version": "2.5.0"
         }
       }
     ]

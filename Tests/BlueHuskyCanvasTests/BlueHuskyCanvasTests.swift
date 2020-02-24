@@ -2,14 +2,11 @@ import XCTest
 @testable import BlueHuskyCanvas
 
 final class BlueHuskyCanvasTests: XCTestCase {
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct
-        // results.
-        XCTAssertEqual(BlueHuskyCanvas().text, "Hello, World!")
+    func testTODO() {
+        XCTFail("TODO")
     }
 
     static var allTests = [
-        ("testExample", testExample),
+        ("testTODO", testTODO),
     ]
 }

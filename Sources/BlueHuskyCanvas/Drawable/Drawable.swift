@@ -75,18 +75,18 @@ public extension DrawingEnvironment {
 
 extension DrawingEnvironment.DpiMultiplier: ExpressibleByFloatLiteral {
     
-    public typealias FloatLiteralType = RawValue
+    public typealias FloatLiteralType = RawValue.FloatLiteralType
     
     
     
     public init(floatLiteral value: FloatLiteralType) {
-        self.init(rawValue: value)
+        self.init(rawValue: RawValue(value))
     }
 }
 
 
 
-extension DrawableEnvironmentParameter.DpiMultiplier: RawRepresentable {
+extension DrawingEnvironment.DpiMultiplier: RawRepresentable {
     
     public typealias RawValue = CGFloat
     

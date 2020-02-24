@@ -87,7 +87,7 @@ public extension CanvasObjectStyle.Stroke {
 public extension CanvasObjectStyle {
     struct Shadow {
         var color: NativeColor
-        var offset: CGPoint
+        var offset: CanvasPoint
         var blur: CGFloat
     }
 }

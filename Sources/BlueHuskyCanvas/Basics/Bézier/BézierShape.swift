@@ -9,6 +9,16 @@ import Foundation
 
 
 
+public typealias BezierShape = BézierShape
+
+
+
 public struct BézierShape {
     var paths: [BézierPath]
+}
+
+
+
+public extension BézierShape {
+    static let empty = BézierShape(paths: [])
 }

@@ -25,3 +25,13 @@ public extension Canvas.Style {
         case custom(drawable: Drawable)
     }
 }
+
+
+
+// MARK: -
+
+public extension Canvas.Style {
+    static let `default` = Canvas.Style(background: .grid(Grid(square: 64,
+                                                               background: NativeColor.windowBackgroundColor,
+                                                               linesColor: NativeColor.gridColor)))
+}

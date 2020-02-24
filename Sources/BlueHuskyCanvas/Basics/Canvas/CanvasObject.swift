@@ -10,7 +10,7 @@ import Foundation
 
 
 
-public protocol CanvasObject {
+public protocol CanvasObject: Drawable {
     var bézierShape: BézierShape { get }
     var aspectRatioLock: CGSize { get }
     var style: Style { get }

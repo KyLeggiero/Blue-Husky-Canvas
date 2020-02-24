@@ -18,7 +18,11 @@ public struct Canvas {
     
     
     
-    public init(objects: [CanvasObject] = []) {
+    public init(objects: [CanvasObject] = [],
+                limits: Limits,
+                style: Style = .default) {
         self.objects = objects
+        self.limits = limits
+        self.style = style
     }
 }
