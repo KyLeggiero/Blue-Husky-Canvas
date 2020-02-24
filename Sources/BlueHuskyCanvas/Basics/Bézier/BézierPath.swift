@@ -16,11 +16,17 @@ public typealias BezierPath = BézierPath
 
 /// A Bézier path: a path made up of connected (or disconnected) Bézier points
 public struct BézierPath {
+    
     /// All the points in this path.
     ///
     /// If the first one's `shouldConnectToPreviousPoint` is `true`, it's treated as if it connects around to the last
     /// point. That behavior, of course, is nonsense to pay attention to if this path is empty or only has 1 point.
     public var points: [BézierPathPoint]
+    
+    
+    public init(points: [BézierPathPoint]) {
+        self.points = points
+    }
 }
 
 

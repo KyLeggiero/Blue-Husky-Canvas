@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NonEmpty
 
 
 
@@ -13,12 +14,15 @@ public typealias BezierShape = BézierShape
 
 
 
+/// A shape made up of one or more Bézier paths
 public struct BézierShape {
-    var paths: [BézierPath]
+    /// All the paths in this shape
+    public var paths: NonEmptyArray<BézierPath>
 }
 
 
 
 public extension BézierShape {
-    static let empty = BézierShape(paths: [])
+    /// A shape that only has one path, and that path is devoid of points
+    static let empty = BézierShape(paths: .init(.empty, []))
 }

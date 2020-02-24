@@ -18,10 +18,10 @@ public extension Canvas {
         public var leading: Limit?
         
         
-        init(top: Limit? = nil,
-            trailing: Limit? = nil,
-            bottom: Limit? = nil,
-            leading: Limit? = nil)
+        public init(top: Limit? = nil,
+                    trailing: Limit? = nil,
+                    bottom: Limit? = nil,
+                    leading: Limit? = nil)
         {
             self.top = top
             self.trailing = trailing
@@ -30,9 +30,9 @@ public extension Canvas {
         }
         
         
-        init(top: Limit? = nil,
-             eachHorizontal: Limit? = nil,
-             bottom: Limit? = nil) {
+        public init(top: Limit?,
+                    eachHorizontal: Limit?,
+                    bottom: Limit?) {
             self.init(
                 top: top,
                 trailing: eachHorizontal,
@@ -42,12 +42,20 @@ public extension Canvas {
         }
         
         
-        init(eachVertical: Limit? = nil,
-             eachHorizontal: Limit? = nil) {
+        public init(eachVertical: Limit?,
+                    eachHorizontal: Limit?) {
             self.init(
                 top: eachVertical,
                 eachHorizontal: eachHorizontal,
                 bottom: eachVertical
+            )
+        }
+        
+        
+        public init(each: Limit?) {
+            self.init(
+                eachVertical: nil,
+                eachHorizontal: nil
             )
         }
     }
