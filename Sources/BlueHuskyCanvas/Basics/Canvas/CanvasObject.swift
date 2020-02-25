@@ -13,6 +13,9 @@ import Foundation
 /// An object which can be placed on a canvas
 public protocol CanvasObject: Drawable {
     
+    /// A universally-unique identifier for this object. As this object is changed, this identifier is not.
+    var identifier: UUID { get }
+    
     /// The shape of the object
     var bézierShape: BézierShape { get }
     
