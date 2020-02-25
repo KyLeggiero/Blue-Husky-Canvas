@@ -19,17 +19,28 @@ public extension CanvasObject {
 
 
 public struct CanvasObjectStyle {
-    var fill: Fill?
-    var stroke: Stroke?
-//    var shadow: Shadow?
+    public var fill: Fill?
+    public var stroke: Stroke?
+//    public var shadow: Shadow?
+    
+    
+    public init(fill: Fill?, stroke: Stroke?) {
+        self.fill = fill
+        self.stroke = stroke
+    }
 }
 
 
 
 public extension CanvasObjectStyle {
     struct Fill {
-        var content: Content
-        var approach: Approach
+        public var content: Content
+        public var approach: Approach
+        
+        public init(content: Content, approach: Approach) {
+            self.content = content
+            self.approach = approach
+        }
     }
 }
 
@@ -58,9 +69,20 @@ public extension CanvasObjectStyle.Fill {
 
 public extension CanvasObjectStyle {
     struct Stroke {
-        var style: Style
-        var content: Fill.Content
-        var thickness: CGFloat
+        public var style: Style
+        public var content: Fill.Content
+        public var thickness: CGFloat
+        
+        
+        public init(
+            style: Style,
+            content: Fill.Content,
+            thickness: CGFloat
+        ) {
+            self.style = style
+            self.content = content
+            self.thickness = thickness
+        }
     }
 }
 
@@ -78,8 +100,17 @@ public extension CanvasObjectStyle.Stroke {
 
 public extension CanvasObjectStyle.Stroke {
     struct DashPhase {
-        var precedingGap: CGFloat
-        var solidLength: CGFloat
+        public var precedingGap: CGFloat
+        public var solidLength: CGFloat
+        
+        
+        public init (
+            precedingGap: CGFloat,
+            solidLength: CGFloat
+        ) {
+            self.precedingGap = precedingGap
+            self.solidLength = solidLength
+        }
     }
 }
 
@@ -87,8 +118,19 @@ public extension CanvasObjectStyle.Stroke {
 
 public extension CanvasObjectStyle {
     struct Shadow {
-        var color: NativeColor
-        var offset: CanvasPoint
-        var blur: CGFloat
+        public var color: NativeColor
+        public var offset: CanvasPoint
+        public var blur: CGFloat
+        
+        
+        public init(
+            color: NativeColor,
+            offset: CanvasPoint,
+            blur: CGFloat
+        ) {
+            self.color = color
+            self.offset = offset
+            self.blur = blur
+        }
     }
 }
