@@ -12,10 +12,10 @@ import Foundation
 /// Represents a rectangle
 public struct Rectangle {
     /// The coordinates of the rectangle
-    public var coordinates: CGRect
+    public var coordinates: CanvasRect
     
     
-    public init(coordinates: CGRect) {
+    public init(coordinates: CanvasRect) {
         self.coordinates = coordinates
     }
 }

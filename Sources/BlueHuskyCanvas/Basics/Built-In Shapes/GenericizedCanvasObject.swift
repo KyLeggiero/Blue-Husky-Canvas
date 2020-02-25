@@ -17,14 +17,14 @@ public struct GenericizedCanvasObject<Base: BézierShapeConvertible> {
     
     public var lock: Lock?
     public var style: Style
-    public var position: CGRect
+    public var position: CanvasPoint
     
     
     public init(
         base: Base,
         lock: Lock?,
         style: Style,
-        position: CGRect
+        position: CanvasPoint
     ) {
         self.base = base
         self.lock = lock

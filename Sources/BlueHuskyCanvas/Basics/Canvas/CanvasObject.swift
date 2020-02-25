@@ -24,7 +24,7 @@ public protocol CanvasObject: Drawable {
     
     /// The positional offset of the object.
     /// Note that this compounds on top of the position of the curves in the `bézierShape`
-    var position: CGRect { get }
+    var position: CanvasPoint { get }
 }
 
 
@@ -34,7 +34,7 @@ public protocol MutableCanvasObject: CanvasObject {
     var bézierShape: BézierShape { get set }
     var lock: Lock? { get set }
     var style: Style { get set }
-    var position: CGRect { get set }
+    var position: CanvasPoint { get set }
 }
 
 
