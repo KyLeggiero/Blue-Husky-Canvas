@@ -21,7 +21,7 @@ public extension CanvasObject {
 public struct CanvasObjectStyle {
     var fill: Fill?
     var stroke: Stroke?
-    var shadow: Shadow?
+//    var shadow: Shadow?
 }
 
 
@@ -38,9 +38,10 @@ public extension CanvasObjectStyle {
 public extension CanvasObjectStyle.Fill {
     enum Content {
         case solid(color: NativeColor)
-        case image(image: NativeImage)
+//        case image(image: NativeImage)
 //        case linearGradient(gradient: LinearGradient)
 //        case radialGradient(gradeitn: RadialGradient)
+//        case custom(drawable: Drawable)
     }
 }
 
@@ -58,7 +59,7 @@ public extension CanvasObjectStyle.Fill {
 public extension CanvasObjectStyle {
     struct Stroke {
         var style: Style
-        var fill: Fill
+        var content: Fill.Content
         var thickness: CGFloat
     }
 }

@@ -125,6 +125,76 @@ public extension BézierPath {
     }
     
     
+    // TODO:
+//    /// Sweeps the imaginary cursor along a circular arc about the given radius, drawing that arc from the given start
+//    /// angle to the given end angle
+//    ///
+//    /// - Parameters:
+//    ///   - center:     The point at the center of the arc
+//    ///   - radius:     The radius of the arc; the distance at which each point in the arc lies
+//    ///   - startAngle: The angle along a circle at which the arc starts
+//    ///   - endAngle:   The angle along a circle at which the arc ends
+//    ///   - clockwise:  _optional_ - Whether to draw the arc in a clockwise direction. Defaults to `true`.
+//    ///
+//    /// - Returns: This drawing object, so you can chain drawing calls
+//    mutating func addArc(center: CanvasPoint,
+//                         radius: CanvasLength,
+//                         startAngle: Angle,
+//                         endAngle: Angle,
+//                         clockwise: Bool = true)
+//    {
+//        let newPoint = BézierPoint(
+//            precedingControlPointOffset: ???,
+//            anchor: point)
+//        self.points.mutateLast { $0.point.succedingControlPointOffset = ??? }
+//
+//        self.points.append(BézierPathPoint(point: newPoint, shouldConnectToPreviousPoint: true))
+//    }
+    
+    
+    /// Adds a Bézier curve to the path
+    ///
+    /// ```plain
+    /// Previous Point's
+    ///           anchor
+    ///           (2, 2)               controlOffset1
+    ///                 X--.           (16, 3)
+    ///                     `-        x
+    ///                       \
+    ///                        \
+    ///                         \
+    ///                         |
+    ///                         |
+    ///                          |
+    ///                          |
+    ///                           |
+    ///                           |        newAnchor
+    ///                           '        (20, 14)
+    ///                            \     .X
+    ///                             `-.-'
+    ///
+    ///
+    ///        controlOffset2
+    ///               (7, 20)
+    ///                      x
+    /// ```
+    ///
+    /// - Parameters:
+    ///   - newAnchor:      The anchor point of the new Bézier point
+    ///   - controlOffset1: The control point succeeding the previous point's anchor
+    ///   - controlOffset2: The control point preceding the new point's anchor
+    mutating func addBézierCurve(
+        to newAnchor: CanvasPoint,
+        controlOffset1: CanvasPoint,
+        controlOffset2: CanvasPoint)
+    {
+        self.points.mutateLast { $0.point.succedingControlPointOffset = controlOffset1 }
+        self.points.append(BézierPathPoint(point: BézierPoint(precedingControlPointOffset: controlOffset2,
+                                                              anchor: newAnchor),
+                                           shouldConnectToPreviousPoint: true))
+    }
+    
+    
     /// Appends a new Bézier point to the end of this path, optionally connecting it to the preceding point
     ///
     /// - Parameters:
