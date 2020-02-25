@@ -13,20 +13,20 @@ import RectangleTools
 public extension Canvas {
     struct Limits {
         public var top: Limit?
-        public var trailing: Limit?
+        public var right: Limit?
         public var bottom: Limit?
-        public var leading: Limit?
+        public var left: Limit?
         
         
         public init(top: Limit? = nil,
-                    trailing: Limit? = nil,
+                    right: Limit? = nil,
                     bottom: Limit? = nil,
-                    leading: Limit? = nil)
+                    left: Limit? = nil)
         {
             self.top = top
-            self.trailing = trailing
+            self.right = right
             self.bottom = bottom
-            self.leading = leading
+            self.left = left
         }
         
         
@@ -35,9 +35,9 @@ public extension Canvas {
                     bottom: Limit?) {
             self.init(
                 top: top,
-                trailing: eachHorizontal,
+                right: eachHorizontal,
                 bottom: bottom,
-                leading: eachHorizontal
+                left: eachHorizontal
             )
         }
         
@@ -58,6 +58,22 @@ public extension Canvas {
                 eachHorizontal: nil
             )
         }
+        
+        
+        public init(rectangle: CanvasRect) {
+            self.init(
+                top: .offset(pointsFromZero: rectangle.minY),
+                right: .offset(pointsFromZero: rectangle.maxX),
+                bottom: .offset(pointsFromZero: rectangle.minY),
+                left: .offset(pointsFromZero: rectangle.minX)
+            )
+        }
+        
+        
+        public init(origin: CanvasPoint = .zero,
+                    size: CanvasSize) {
+            self.init(rectangle: CanvasRect(origin: origin, size: size))
+        }
     }
 }
 
@@ -70,5 +86,21 @@ public extension Canvas {
         
         
         public typealias Length = CGFloat
+    }
+}
+
+
+
+extension Canvas.Limit: ExpressibleByFloatLiteral {
+    public init(floatLiteral value: Length.FloatLiteralType) {
+        self = .offset(pointsFromZero: Length(floatLiteral: value))
+    }
+}
+
+
+
+extension Canvas.Limit: ExpressibleByIntegerLiteral {
+    public init(integerLiteral value: Length.IntegerLiteralType) {
+        self = .offset(pointsFromZero: Length(integerLiteral: value))
     }
 }
