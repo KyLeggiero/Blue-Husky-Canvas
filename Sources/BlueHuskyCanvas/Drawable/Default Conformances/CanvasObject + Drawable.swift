@@ -14,6 +14,17 @@ public extension CanvasObject {
     func draw(in context: CGContext, targetSize: CGSize, environment: Self.Environment) {
         let nativePath = NativeBezierPath()
         
+        switch self.style.fill?.approach {
+        case .always:
+            nativePath.windingRule = .nonZero
+            
+        case .evenOdd:
+            nativePath.windingRule = .evenOdd
+            
+        case .none:
+            break
+        }
+        
         self.bézierShape.paths.forEach { path in
             guard let first = path.points.first else { return }
             
@@ -56,8 +67,6 @@ public extension CanvasObject {
         }
         
         
-        
-        
         if let fill = style.fill {
             switch fill.content {
             case .solid(let color):
@@ -70,6 +79,7 @@ public extension CanvasObject {
             switch stroke.content {
             case .solid(let color):
                 color.setStroke()
+                context.setLineWidth(stroke.thickness)
                 nativePath.stroke()
             }
         }

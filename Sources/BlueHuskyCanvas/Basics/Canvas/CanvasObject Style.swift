@@ -91,8 +91,8 @@ public extension CanvasObjectStyle {
 public extension CanvasObjectStyle.Stroke {
     enum Style {
         case solid
-        case dashed(phases: NonEmptyArray<DashPhase>)
-        case dotted(gaps: NonEmptyArray<CGFloat>)
+//        case dashed(phases: NonEmptyArray<DashPhase>)
+//        case dotted(gaps: NonEmptyArray<CGFloat>)
     }
 }
 
