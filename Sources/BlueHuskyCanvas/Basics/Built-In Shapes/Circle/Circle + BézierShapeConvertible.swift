@@ -26,32 +26,32 @@ extension Circle: BézierShapeConvertible {
             
             // Top-right arc ╮
             .addBézierCurve(to: frame.maxXmidY,
-                            controlOffset1: CanvasPoint(x: center.x + bézierCircularArcControlPointOffset,
-                                                        y: center.y + radius),
-                            controlOffset2: CanvasPoint(x: center.x + radius,
-                                                        y: center.y + bézierCircularArcControlPointOffset)
+                            controlOffset1: CanvasPoint(x:  bézierCircularArcControlPointOffset,
+                                                        y: 0),
+                            controlOffset2: CanvasPoint(x: 0,
+                                                        y:  bézierCircularArcControlPointOffset)
             )
             
             // Bottom-right arc ╯
             .addBézierCurve(to: frame.midXminY,
-                            controlOffset1: CanvasPoint(x: center.x + radius,
-                                                        y: center.y - bézierCircularArcControlPointOffset),
-                            controlOffset2: CanvasPoint(x: center.x + bézierCircularArcControlPointOffset,
-                                                        y: center.y - radius)
+                            controlOffset1: CanvasPoint(x: 0,
+                                                        y: -bézierCircularArcControlPointOffset),
+                            controlOffset2: CanvasPoint(x:  bézierCircularArcControlPointOffset,
+                                                        y: 0)
             )
             // Bottom-left arc ╰
             .addBézierCurve(to: frame.minXmidY,
-                            controlOffset1: CanvasPoint(x: center.x - bézierCircularArcControlPointOffset,
-                                                        y: center.y - radius),
-                            controlOffset2: CanvasPoint(x: center.x - radius,
-                                                        y: center.y - bézierCircularArcControlPointOffset)
+                            controlOffset1: CanvasPoint(x: -bézierCircularArcControlPointOffset,
+                                                        y: 0),
+                            controlOffset2: CanvasPoint(x: 0,
+                                                        y: -bézierCircularArcControlPointOffset)
             )
             // Top-left arc ╭
             .addBézierCurve(to: frame.midXmaxY,
-                            controlOffset1: CanvasPoint(x: center.x - radius,
-                                                        y: center.y + bézierCircularArcControlPointOffset),
-                            controlOffset2: CanvasPoint(x: center.x - bézierCircularArcControlPointOffset,
-                                                        y: center.y + radius)
+                            controlOffset1: CanvasPoint(x: 0,
+                                                        y:  bézierCircularArcControlPointOffset),
+                            controlOffset2: CanvasPoint(x: -bézierCircularArcControlPointOffset,
+                                                        y: 0)
             )
             .close()
             .doneBuilding()
