@@ -15,6 +15,14 @@ public extension RandomAccessCollection
         Index: Strideable
 {
     mutating func mutateLast(with mutator: (inout Element) -> Void) {
-        mutator(&self[endIndex.advanced(by: -1)])
+        if isEmpty {
+            return
+        }
+        else if count == 1 {
+            return mutator(&self[startIndex])
+        }
+        else {
+            return mutator(&self[endIndex.advanced(by: -1)])
+        }
     }
 }
