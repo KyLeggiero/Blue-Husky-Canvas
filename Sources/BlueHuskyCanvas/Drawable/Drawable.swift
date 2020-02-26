@@ -30,7 +30,12 @@ public protocol Drawable {
 /// The environment in which something will be drawn
 public struct DrawingEnvironment {
     /// The multiplier for the output DPI.
-    var dpiMultiplier: DpiMultiplier
+    public var dpiMultiplier: DpiMultiplier
+    
+    
+    public init(dpiMultiplier: DpiMultiplier) {
+        self.dpiMultiplier = dpiMultiplier
+    }
 }
 
 
