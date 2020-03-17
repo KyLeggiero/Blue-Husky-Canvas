@@ -15,7 +15,7 @@ public typealias BezierPath = BézierPath
 
 
 /// A Bézier path: a path made up of connected (or disconnected) Bézier points
-public struct BézierPath {
+public struct BézierPath: Equatable {
     
     /// All the points in this path.
     ///
@@ -32,7 +32,7 @@ public struct BézierPath {
 
 
 /// A point in a Bézier path
-public struct BézierPathPoint {
+public struct BézierPathPoint: Equatable {
     
     /// The point, itself
     public var point: BézierPoint

@@ -28,6 +28,14 @@ public protocol CanvasObject: Drawable {
     /// The positional offset of the object.
     /// Note that this compounds on top of the position of the curves in the `bézierShape`
     var position: CanvasPoint { get }
+    
+    
+    /// Determines whether this object is different from the other, whether that be because it is a completely
+    /// different object, or because it's the same object after/before a mutation
+    ///
+    /// - Parameter other: Another canvas object. It doesn't have to be the same Type
+    /// - Returns: `true` iff this is not perfectly equal to the given one, aside from Type
+    func isUpdateOrInequal(to other: CanvasObject) -> Bool
 }
 
 
@@ -35,6 +43,16 @@ public protocol CanvasObject: Drawable {
 public extension CanvasObject {
     static func ==(lhs: Self, rhs: Self) -> Bool {
         lhs.identifier == rhs.identifier
+    }
+    
+    
+    func isUpdateOrInequal(to other: CanvasObject) -> Bool {
+        return
+            self.identifier != other.identifier
+                || self.position != other.position
+                || self.lock != other.lock
+                || self.style != other.style
+                || self.bézierShape != other.bézierShape
     }
 }
 
@@ -82,7 +100,7 @@ public extension MutableCanvasObject {
 
 
 /// A way in which a canvas object is locked
-public enum CanvasObjectLock {
+public enum CanvasObjectLock: Equatable {
     
     /// The object has an aspect ratio lock;
     /// it can be moved freely, but, when resized, it must maintain this aspect ratio

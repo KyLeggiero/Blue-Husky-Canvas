@@ -18,7 +18,7 @@ public extension CanvasObject {
 
 
 
-public struct CanvasObjectStyle {
+public struct CanvasObjectStyle: Equatable {
     public var fill: Fill?
     public var stroke: Stroke?
 //    public var shadow: Shadow?
@@ -33,7 +33,7 @@ public struct CanvasObjectStyle {
 
 
 public extension CanvasObjectStyle {
-    struct Fill {
+    struct Fill: Equatable {
         public var content: Content
         public var approach: Approach
         
@@ -47,7 +47,7 @@ public extension CanvasObjectStyle {
 
 
 public extension CanvasObjectStyle.Fill {
-    enum Content {
+    enum Content: Equatable {
         case solid(color: NativeColor)
 //        case image(image: NativeImage)
 //        case linearGradient(gradient: LinearGradient)
@@ -59,7 +59,7 @@ public extension CanvasObjectStyle.Fill {
 
 
 public extension CanvasObjectStyle.Fill {
-    enum Approach {
+    enum Approach: Equatable {
         case always
         case evenOdd
     }
@@ -68,7 +68,7 @@ public extension CanvasObjectStyle.Fill {
 
 
 public extension CanvasObjectStyle {
-    struct Stroke {
+    struct Stroke: Equatable {
         public var style: Style
         public var content: Fill.Content
         public var thickness: CGFloat
@@ -89,7 +89,7 @@ public extension CanvasObjectStyle {
 
 
 public extension CanvasObjectStyle.Stroke {
-    enum Style {
+    enum Style: Equatable {
         case solid
 //        case dashed(phases: NonEmptyArray<DashPhase>)
 //        case dotted(gaps: NonEmptyArray<CGFloat>)
@@ -99,7 +99,7 @@ public extension CanvasObjectStyle.Stroke {
 
 
 public extension CanvasObjectStyle.Stroke {
-    struct DashPhase {
+    struct DashPhase: Equatable {
         public var precedingGap: CGFloat
         public var solidLength: CGFloat
         
@@ -117,7 +117,7 @@ public extension CanvasObjectStyle.Stroke {
 
 
 public extension CanvasObjectStyle {
-    struct Shadow {
+    struct Shadow: Equatable {
         public var color: NativeColor
         public var offset: CanvasPoint
         public var blur: CGFloat

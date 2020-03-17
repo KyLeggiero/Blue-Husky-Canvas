@@ -15,7 +15,7 @@ public typealias BezierPoint = BézierPoint
 
 
 /// A point along a Bézier path
-public struct BézierPoint {
+public struct BézierPoint: Equatable {
     /// The Bézier control point before this one on the path. `nil` and `.zero` behave equivalently.
     ///
     /// For instance, setting this to `(-2, 1)` will lock it to always be two units lower on the X axis and 1 unit

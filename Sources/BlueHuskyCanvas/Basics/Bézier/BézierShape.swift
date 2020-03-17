@@ -15,7 +15,7 @@ public typealias BezierShape = BézierShape
 
 
 /// A shape made up of one or more Bézier paths
-public struct BézierShape {
+public struct BézierShape: Equatable {
     /// All the paths in this shape
     public var paths: NonEmptyArray<BézierPath>
 }
