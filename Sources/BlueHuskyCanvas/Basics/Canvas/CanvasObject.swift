@@ -32,6 +32,22 @@ public protocol CanvasObject: Drawable {
 
 
 
+extension CanvasObject {
+    static func ==(lhs: Self, rhs: Self) -> Bool {
+        lhs.identifier == rhs.identifier
+    }
+}
+
+
+
+extension CanvasObject {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(identifier)
+    }
+}
+
+
+
 /// An object which can be placed on a canvas and manipulated
 public protocol MutableCanvasObject: CanvasObject {
     var bézierShape: BézierShape { get set }
