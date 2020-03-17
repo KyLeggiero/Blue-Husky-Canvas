@@ -32,7 +32,7 @@ public protocol CanvasObject: Drawable {
 
 
 
-extension CanvasObject {
+public extension CanvasObject {
     static func ==(lhs: Self, rhs: Self) -> Bool {
         lhs.identifier == rhs.identifier
     }
@@ -40,7 +40,13 @@ extension CanvasObject {
 
 
 
-extension CanvasObject {
+public func ==(lhs: CanvasObject, rhs: CanvasObject) -> Bool {
+    lhs.identifier == rhs.identifier
+}
+
+
+
+public extension CanvasObject {
     func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
