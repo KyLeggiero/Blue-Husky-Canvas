@@ -12,51 +12,21 @@ import RectangleTools
 
 public extension Canvas {
     struct Limits {
-        public var top: Limit?
-        public var right: Limit?
-        public var bottom: Limit?
-        public var left: Limit?
+        public var top: Limit
+        public var right: Limit
+        public var bottom: Limit
+        public var left: Limit
         
         
-        public init(top: Limit? = nil,
-                    right: Limit? = nil,
-                    bottom: Limit? = nil,
-                    left: Limit? = nil)
+        public init(top: Limit = .infinite,
+                    right: Limit = .infinite,
+                    bottom: Limit = .infinite,
+                    left: Limit = .infinite)
         {
             self.top = top
             self.right = right
             self.bottom = bottom
             self.left = left
-        }
-        
-        
-        public init(top: Limit?,
-                    eachHorizontal: Limit?,
-                    bottom: Limit?) {
-            self.init(
-                top: top,
-                right: eachHorizontal,
-                bottom: bottom,
-                left: eachHorizontal
-            )
-        }
-        
-        
-        public init(eachVertical: Limit?,
-                    eachHorizontal: Limit?) {
-            self.init(
-                top: eachVertical,
-                eachHorizontal: eachHorizontal,
-                bottom: eachVertical
-            )
-        }
-        
-        
-        public init(each: Limit?) {
-            self.init(
-                eachVertical: nil,
-                eachHorizontal: nil
-            )
         }
         
         
@@ -82,6 +52,7 @@ public extension Canvas {
 public extension Canvas {
     enum Limit {
         case offset(pointsFromZero: Length)
+        case infinite
         
         
         

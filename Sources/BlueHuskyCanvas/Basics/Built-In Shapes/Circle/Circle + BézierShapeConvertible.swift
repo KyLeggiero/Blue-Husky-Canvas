@@ -11,9 +11,9 @@ import NonEmpty
 
 
 extension Circle: BézierShapeConvertible {
-    public func bézierShape() -> BézierShape {
+    public func bézierShape(at position: CanvasPoint) -> BézierShape {
         
-        let frame = self.frame
+        let frame = self.frame(at: position)
         let bézierCircularArcControlPointOffset = radius * .bézierCircularArcMultiplier
         
         return BézierShape
@@ -58,12 +58,21 @@ extension Circle: BézierShapeConvertible {
     }
     
     
-    var frame: CanvasRect {
+    func frame(at position: CanvasPoint) -> CanvasRect {
+//        let diameter = self.diameter
+//        let center = proposedFrame.center
+//
+//        return CanvasRect(
+//            x: center.x - radius,
+//            y: center.y - radius,
+//            width: diameter,
+//            height: diameter)
+        
         let diameter = self.diameter
         
         return CanvasRect(
-            x: center.x - radius,
-            y: center.y - radius,
+            x: position.x - radius,
+            y: position.y - radius,
             width: diameter,
             height: diameter)
     }

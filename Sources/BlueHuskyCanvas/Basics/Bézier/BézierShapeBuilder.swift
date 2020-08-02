@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FunctionTools
 
 
 
@@ -230,5 +231,10 @@ public extension BézierShape {
     /// Returns a new drawing object, starting with an empty shape
     static func startBuilding() -> BézierShapeBuilder {
         return BézierShape.empty.continueBuilding()
+    }
+    
+    
+    static func build(in buildOperation: Transformer<BézierShapeBuilder, BézierShapeBuilder>) -> Self {
+        buildOperation(Self.startBuilding()).doneBuilding()
     }
 }

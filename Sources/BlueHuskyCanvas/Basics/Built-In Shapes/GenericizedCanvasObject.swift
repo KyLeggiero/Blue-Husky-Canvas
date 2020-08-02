@@ -39,6 +39,7 @@ public struct GenericizedCanvasObject<Base: BézierShapeConvertible> {
 
 
 extension GenericizedCanvasObject: CanvasObject {
-    public var bézierShape: BézierShape { base.bézierShape() }
+    @inlinable
+    public var bézierShape: BézierShape { base.bézierShape(at: position) }
 }
 

@@ -26,3 +26,30 @@ public struct Canvas {
         self.style = style
     }
 }
+
+
+
+#if DEBUG
+internal extension Canvas {
+    static let debug = Canvas(
+        objects: [
+            CircleCanvasObject(
+                base: Circle(
+//                            center: .init(x: 10, y: 20),
+                    radius: 15),
+                lock: .total,
+                style: CanvasObjectStyle(
+                    fill: .init(
+                        content: .solid(color: .brown),
+                        approach: .always),
+                    stroke: .init(
+                        style: .solid,
+                        content: .solid(color: .green),
+                        thickness: 4)),
+                position: .init(x: 10, y: 20))
+        ],
+        limits: .init(size: .init(width: 30, height: 30)),
+        style: .init(background: .solid(color: .gray))
+    )
+}
+#endif

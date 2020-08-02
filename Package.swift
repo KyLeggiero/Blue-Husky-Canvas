@@ -5,9 +5,9 @@ import PackageDescription
 
 
 
-let package = Package(
+let package = Package.init(
     name: "Blue Husky Canvas",
-    platforms: [.macOS(.v10_12)],
+    platforms: [.macOS(.v10_15)],
     products: [
         // Products define the executables and libraries produced by a package, and make them visible to other packages.
         .library(
@@ -19,6 +19,7 @@ let package = Package(
         .package(url: "https://github.com/RougeWare/Swift-Color-Swatches.git", .branch("feature/MVP")),
         .package(url: "https://github.com/RougeWare/Swift-Rectangle-Tools.git", from: "2.4.0"),
         .package(url: "https://github.com/RougeWare/Swift-Cross-Kit-Types.git", from: "1.0.0"),
+        .package(url: "https://github.com/RougeWare/Swift-Function-Tools.git", from: "1.2.2"),
         .package(url: "https://github.com/pointfreeco/swift-nonempty.git", from: "0.2.0"),
     ],
     targets: [
@@ -26,7 +27,7 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages which this package depends on.
         .target(
             name: "BlueHuskyCanvas",
-            dependencies: ["ColorSwatches", "RectangleTools", "CrossKitTypes", "NonEmpty"]),
+            dependencies: ["ColorSwatches", "CrossKitTypes", "FunctionTools", "RectangleTools", "NonEmpty"]),
         .testTarget(
             name: "BlueHuskyCanvasTests",
             dependencies: ["BlueHuskyCanvas"]),

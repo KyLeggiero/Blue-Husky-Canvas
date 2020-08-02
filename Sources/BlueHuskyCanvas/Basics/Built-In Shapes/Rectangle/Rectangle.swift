@@ -11,11 +11,12 @@ import Foundation
 
 /// Represents a rectangle
 public struct Rectangle {
-    /// The coordinates of the rectangle
-    public var coordinates: CanvasRect
+    
+    /// The size of the rectangle
+    public var size: CanvasSize
     
     
-    public init(coordinates: CanvasRect) {
-        self.coordinates = coordinates
+    public init(size: CanvasSize) {
+        self.size = size
     }
 }
