@@ -7,6 +7,7 @@
 
 import Foundation
 import NonEmpty
+import MultiplicativeArithmetic
 
 
 
