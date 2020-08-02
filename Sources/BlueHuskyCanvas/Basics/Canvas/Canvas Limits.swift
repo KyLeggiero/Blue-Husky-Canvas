@@ -28,23 +28,30 @@ public extension Canvas {
             self.bottom = bottom
             self.left = left
         }
-        
-        
-        public init(rectangle: CanvasRect) {
-            self.init(
-                top: .offset(pointsFromZero: rectangle.minY),
-                right: .offset(pointsFromZero: rectangle.maxX),
-                bottom: .offset(pointsFromZero: rectangle.minY),
-                left: .offset(pointsFromZero: rectangle.minX)
-            )
-        }
-        
-        
-        public init(origin: CanvasPoint = .zero,
-                    size: CanvasSize) {
-            self.init(rectangle: CanvasRect(origin: origin, size: size))
-        }
     }
+}
+
+
+
+public extension Canvas.Limits {
+    
+    init(rectangle: CanvasRect) {
+        self.init(
+            top: .offset(pointsFromZero: rectangle.minY),
+            right: .offset(pointsFromZero: rectangle.maxX),
+            bottom: .offset(pointsFromZero: rectangle.minY),
+            left: .offset(pointsFromZero: rectangle.minX)
+        )
+    }
+    
+    
+    init(origin: CanvasPoint = .zero,
+                size: CanvasSize) {
+        self.init(rectangle: CanvasRect(origin: origin, size: size))
+    }
+    
+    
+    static let infinite = Self(top: .infinite, right: .infinite, bottom: .infinite, left: .infinite)
 }
 
 
