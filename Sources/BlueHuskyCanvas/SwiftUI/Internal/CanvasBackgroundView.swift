@@ -21,7 +21,7 @@ struct CanvasBackgroundView: View {
             Color(color)
             
         case .grid(let grid):
-            Text("GRID: \("\(grid)")")
+            GridView(offset: .zero, grid: grid)
             
         case .custom(drawable: let drawable):
             Text("DRAWABLE: \("\(drawable)")")
