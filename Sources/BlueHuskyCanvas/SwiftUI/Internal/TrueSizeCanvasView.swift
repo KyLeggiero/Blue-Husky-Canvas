@@ -16,6 +16,7 @@ struct TrueSizeCanvasView: View {
     
     var body: some View {
         CanvasBackgroundView(background: canvas.style.background)
+            .frame(size: canvas.calculateSize())
     }
 }
 

@@ -26,3 +26,11 @@ public extension BézierShape {
     /// A shape that only has one path, and that path is devoid of points
     static let empty = BézierShape(paths: .init(.empty, []))
 }
+
+
+
+public extension BézierShape {
+    func calculateFrame() -> CanvasRect {
+        paths.map { $0.calculateFrame() }
+    }
+}

@@ -54,6 +54,11 @@ public extension CanvasObject {
                 || self.style != other.style
                 || self.bézierShape != other.bézierShape
     }
+    
+    
+    func calculateFrame() -> CanvasRect {
+        bézierShape.paths.lazy.map { $0.calculateFrame() }
+    }
 }
 
 

@@ -2,6 +2,24 @@
   "object": {
     "pins": [
       {
+        "package": "BasicMathTools",
+        "repositoryURL": "https://github.com/RougeWare/Swift-Basic-Math-Tools.git",
+        "state": {
+          "branch": null,
+          "revision": "d43e243c40c69815e31767d96804b0edeaac7eff",
+          "version": "1.0.0"
+        }
+      },
+      {
+        "package": "CollectionTools",
+        "repositoryURL": "https://github.com/RougeWare/Swift-Collection-Tools.git",
+        "state": {
+          "branch": null,
+          "revision": "8b493d5d2d05ef0a949f43417c629a50ce2f08f8",
+          "version": "2.1.0"
+        }
+      },
+      {
         "package": "Swift Color Swatches",
         "repositoryURL": "https://github.com/RougeWare/Swift-Color-Swatches.git",
         "state": {

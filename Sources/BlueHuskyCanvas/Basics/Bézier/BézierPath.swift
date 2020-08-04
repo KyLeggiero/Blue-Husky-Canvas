@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CollectionTools
 
 
 
@@ -99,6 +100,13 @@ public extension BézierPath {
             // If it is not empty, and the first connects to the last, check all the rest. I don't expect this to
             // commonly return `false`, but since it can't yet be guaranteed, it has to be checked.
             return !points.contains { !$0.shouldConnectToPreviousPoint }
+        }
+    }
+    
+    
+    var segments: [BézierPathSegment] {
+        return points.sequentialPairs.map { segmentPoints in
+            TODO
         }
     }
 }

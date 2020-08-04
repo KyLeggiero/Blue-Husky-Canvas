@@ -49,3 +49,25 @@ public struct BézierPoint: Equatable {
         self.init(anchor: anchor)
     }
 }
+
+
+
+public extension BézierPoint {
+    
+    /// The resolved absolute location of the succeding control point, or `anchor` if the control point doesn't exist
+    @inlinable
+    var succedingControlPointOrAnchor: CanvasPoint { succedingControlPoint ?? anchor }
+    
+    /// The resolved absolute location of the preceding control point, or `anchor` if the control point doesn't exist
+    @inlinable
+    var precedingControlPointOrAnchor: CanvasPoint { precedingControlPoint ?? anchor }
+    
+    
+    /// The resolved absolute location of the succeding control point, or `nil` if the control point doesn't exist
+    @inlinable
+    var succedingControlPoint: CanvasPoint? { succedingControlPointOffset.map { $0 + anchor } }
+    
+    /// The resolved absolute location of the preceding control point, or `nil` if the control point doesn't exist
+    @inlinable
+    var precedingControlPoint: CanvasPoint? { precedingControlPointOffset.map { $0 + anchor } }
+}

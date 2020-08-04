@@ -10,6 +10,7 @@ import Foundation
 
 
 
+/// The model of a canvas
 public struct Canvas {
     
     public var objects: [CanvasObject]
@@ -24,6 +25,16 @@ public struct Canvas {
         self.objects = objects
         self.limits = limits
         self.style = style
+    }
+}
+
+
+
+public extension Canvas {
+    func calculateSize() -> CanvasSize {
+        objects
+            .lazy
+            .map { $0.calculateSize() }
     }
 }
 
