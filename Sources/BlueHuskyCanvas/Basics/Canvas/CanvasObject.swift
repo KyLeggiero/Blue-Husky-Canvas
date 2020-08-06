@@ -57,7 +57,12 @@ public extension CanvasObject {
     
     
     func calculateFrame() -> CanvasRect {
-        bézierShape.paths.lazy.map { $0.calculateFrame() }
+        bézierShape
+            .paths
+            .lazy
+            .map { $0.calculateFrame() }
+            .grandUnion()
+            ?? .init(origin: .zero, size: .zer)
     }
 }
 

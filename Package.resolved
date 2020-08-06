@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/RougeWare/Swift-Collection-Tools.git",
         "state": {
           "branch": null,
-          "revision": "8b493d5d2d05ef0a949f43417c629a50ce2f08f8",
-          "version": "2.1.0"
+          "revision": "66cae0a93d4ec4ed7a9643a9bf735d2eef23d275",
+          "version": "2.2.0"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/RougeWare/Swift-Rectangle-Tools.git",
         "state": {
           "branch": null,
-          "revision": "0bc598fb555e9b7d0569e31a2c5b1b2fb84aab84",
-          "version": "2.6.0"
+          "revision": "428ced0b49c64190a9cd1473b21644fb97b887c3",
+          "version": "2.8.0"
         }
       }
     ]

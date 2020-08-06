@@ -1,13 +1,15 @@
 //
 //  BézierPathSegment.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-08-02.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import Foundation
 import CoreGraphics.CGBase
 import BasicMathTools
+import RectangleTools
 
 
 
@@ -128,16 +130,27 @@ public extension BézierPathSegment {
         bounds.1[jlen] = y0
         bounds.0[jlen + 1] = x3
         bounds.1[jlen + 1] = y3
-        tvalues.count = bounds.0.count = bounds.1.count = points.count = jlen + 2
+        
+        let newArraySize = jlen + 2
+        tvalues  = Array(tvalues .onlyFirst(newArraySize))
+        bounds.0 = Array(bounds.0.onlyFirst(newArraySize))
+        bounds.1 = Array(bounds.1.onlyFirst(newArraySize))
+        points   = Array(points  .onlyFirst(newArraySize))
         
         return .init(
-            left: bounds.0.min(),
-            top: bounds.1.min(),
-            right: bounds.0.max(),
-            bottom: bounds.1.max(),
-            points: points, // local extremes
-            tvalues: tvalues // t values of local extremes
+            minX: bounds.0.min() ?? 0,
+            minY: bounds.1.max() ?? 0,
+            maxX: bounds.0.max() ?? 0,
+            maxY: bounds.1.min() ?? 0
         )
+//        return {
+//            left: min.apply(null, bounds[0]),
+//            top: min.apply(null, bounds[1]),
+//            right: max.apply(null, bounds[0]),
+//            bottom: max.apply(null, bounds[1]),
+//            points: points, // local extremes
+//            tvalues: tvalues // t values of local extremes
+//        };
     }
     
     

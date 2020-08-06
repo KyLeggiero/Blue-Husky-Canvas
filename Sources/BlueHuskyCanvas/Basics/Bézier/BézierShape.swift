@@ -31,6 +31,10 @@ public extension BézierShape {
 
 public extension BézierShape {
     func calculateFrame() -> CanvasRect {
-        paths.map { $0.calculateFrame() }
+        paths
+            .lazy
+            .map { $0.calculateFrame() }
+            .grandUnion()
+            ?? .init(origin: .zero, size: .zero)
     }
 }
