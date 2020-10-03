@@ -1,9 +1,9 @@
 //
 //  CanvasObject Style.swift
-//  Blue-Husky-Canvas
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-02-10.
-//  Copyright © 2020 Ben Leggiero. All rights reserved.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import Foundation

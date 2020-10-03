@@ -1,8 +1,9 @@
 //
 //  CanvasRect.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-02-24.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import CoreGraphics

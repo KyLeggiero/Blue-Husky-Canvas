@@ -13,7 +13,10 @@ import Foundation
 /// The model of a canvas
 public struct Canvas {
     
+    /// The objects on the canvas
     public var objects: [CanvasObject]
+    
+    /// How far the canvas goes in any given direction
     public var limits: Limits
     public var style: Style
     
@@ -31,10 +34,10 @@ public struct Canvas {
 
 
 public extension Canvas {
-    func calculateSize() -> CanvasSize {
+    func calculateContentFrame() -> CanvasRect {
         objects
             .lazy
-            .map { $0.calculateSize() }
+            .map { $0.calculateFrame() }
             .grandUnion()
             ?? .init(origin: .zero, size: .zero)
     }

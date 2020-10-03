@@ -39,7 +39,7 @@ public extension BézierPathSegment {
         var points = [CGPoint]()
         
         var a: CGFloat! = nil
-        var v: CGFloat! = nil
+//        var v: CGFloat! = nil
         var b: CGFloat! = nil
         var c: CGFloat! = nil
         var t: CGFloat! = nil
@@ -97,12 +97,12 @@ public extension BézierPathSegment {
         
         var x: CGFloat
         var y: CGFloat
-        var jlen = tvalues.count // j
+        let jlen = tvalues.count // j
         var mt: CGFloat
         
 //        var j = tvalues.count
 //        while (j--)
-        for j in (1...tvalues.count).reversed() {
+        for j in (1...jlen).reversed() {
             t = tvalues[j]
             mt = 1 - t
             x = (mt * mt * mt * x0) + (3 * mt * mt * t * x1) + (3 * mt * t * t * x2) + (t * t * t * x3)

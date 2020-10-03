@@ -1,11 +1,14 @@
 //
 //  CanvasBackgroundView.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-07-26.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import SwiftUI
+
+
 
 struct CanvasBackgroundView: View {
     

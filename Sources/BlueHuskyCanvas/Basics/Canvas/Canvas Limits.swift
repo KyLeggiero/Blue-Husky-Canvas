@@ -1,8 +1,9 @@
 //
 //  Canvas Limits.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-02-16.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import Foundation
@@ -12,21 +13,21 @@ import RectangleTools
 
 public extension Canvas {
     struct Limits {
-        public var top: Limit
-        public var right: Limit
-        public var bottom: Limit
-        public var left: Limit
+        public var minX: Limit
+        public var minY: Limit
+        public var maxX: Limit
+        public var maxY: Limit
         
         
-        public init(top: Limit = .infinite,
-                    right: Limit = .infinite,
-                    bottom: Limit = .infinite,
-                    left: Limit = .infinite)
+        public init(minX: Limit = .infinite,
+                    minY: Limit = .infinite,
+                    maxX: Limit = .infinite,
+                    maxY: Limit = .infinite)
         {
-            self.top = top
-            self.right = right
-            self.bottom = bottom
-            self.left = left
+            self.minX = minX
+            self.minY = minY
+            self.maxX = maxX
+            self.maxY = maxY
         }
     }
 }
@@ -37,10 +38,10 @@ public extension Canvas.Limits {
     
     init(rectangle: CanvasRect) {
         self.init(
-            top: .offset(pointsFromZero: rectangle.minY),
-            right: .offset(pointsFromZero: rectangle.maxX),
-            bottom: .offset(pointsFromZero: rectangle.minY),
-            left: .offset(pointsFromZero: rectangle.minX)
+            minX: .offset(pointsFromZero: rectangle.minX),
+            minY: .offset(pointsFromZero: rectangle.minY),
+            maxX: .offset(pointsFromZero: rectangle.maxX),
+            maxY: .offset(pointsFromZero: rectangle.maxY)
         )
     }
     
@@ -51,7 +52,7 @@ public extension Canvas.Limits {
     }
     
     
-    static let infinite = Self(top: .infinite, right: .infinite, bottom: .infinite, left: .infinite)
+    static let infinite = Self(minX: .infinite, minY: .infinite, maxX: .infinite, maxY: .infinite)
 }
 
 

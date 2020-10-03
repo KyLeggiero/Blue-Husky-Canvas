@@ -1,8 +1,9 @@
 //
 //  GridView.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-08-02.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import SwiftUI

@@ -16,12 +16,13 @@ let package = Package.init(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(url: "https://github.com/RougeWare/Swift-Collection-Tools.git", from: "2.2.0"),
-        .package(url: "https://github.com/RougeWare/Swift-Color-Swatches.git", .branch("feature/MVP")),
-        .package(url: "https://github.com/RougeWare/Swift-Cross-Kit-Types.git", from: "1.0.0"),
-        .package(url: "https://github.com/RougeWare/Swift-Function-Tools.git", from: "1.2.2"),
-        .package(url: "https://github.com/RougeWare/Swift-Rectangle-Tools.git", from: "2.8.0"),
         .package(url: "https://github.com/RougeWare/Swift-Basic-Math-Tools.git", from: "1.0.0"),
+        .package(url: "https://github.com/RougeWare/Swift-Collection-Tools.git", from: "2.2.0"),
+        .package(url: "https://github.com/RougeWare/Swift-Color-Swatches.git", from: "1.0.0"),
+//        .package(url: "https://github.com/RougeWare/Swift-Cross-Kit-Types.git", from: "1.0.0"),
+//        .package(url: "https://github.com/RougeWare/Swift-Function-Tools.git", from: "1.2.2"),
+//        .package(url: "https://github.com/RougeWare/Swift-Rectangle-Tools.git", from: "2.9.0"),
+        
         .package(url: "https://github.com/pointfreeco/swift-nonempty.git", from: "0.2.0"),
     ],
     targets: [
@@ -33,9 +34,9 @@ let package = Package.init(
                 "BasicMathTools",
                 "CollectionTools",
                 "ColorSwatches",
-                "CrossKitTypes",
-                "FunctionTools",
-                "RectangleTools",
+//                "CrossKitTypes",
+//                "FunctionTools",
+//                "RectangleTools",
                 
                 "NonEmpty",
             ]),

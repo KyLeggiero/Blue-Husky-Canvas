@@ -1,12 +1,15 @@
 //
 //  BézierPath.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-02-15.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import Foundation
+
 import CollectionTools
+import RectangleTools
 
 
 
@@ -104,11 +107,106 @@ public extension BézierPath {
     }
     
     
-    var segments: [BézierPathSegment] {
-        return points.sequentialPairs.map { segmentPoints in
-            TODO
+    var segments: [BézierPathSegment] { 
+        return points
+            .sequentialPairs
+            .compactMap { first, second in
+                second.shouldConnectToPreviousPoint
+                    ? BézierPathSegment(firstPoint: first.point,
+                                         secondPoint: second.point)
+                    : nil
         }
     }
+}
+
+
+
+// MARK: - Frame Calculation
+
+public extension BézierPath {
+    
+    func calculateFrame() -> CanvasRect {
+        segments
+            .lazy
+            .map { $0.calculateFrame() }
+            .grandUnion()
+            ?? .one
+    }
+    
+    //function getBoundsOfPath (path)
+    //{
+    //    //var curve = path2curve(path);
+    //    curve = path;
+    //    ////console.log(JSON.stringify(path));
+    //    ////console.log("--------------------------------------------------------------------");
+    //    //console.log(JSON.stringify(curve));
+    //    var bounds, s, startX, startY,
+    //        minx = Number.MAX_VALUE,
+    //        miny = Number.MAX_VALUE,
+    //        maxx = Number.MIN_VALUE,
+    //        maxy = Number.MIN_VALUE;
+    //    var isC = false;
+    //    for (var i = 0, ilen = curve.length; i < ilen; i++)
+    //    {
+    //        //var val = 6;
+    //        //if(i!=val && i!=val-1) continue;
+    //        var s = curve[i];
+    //        ////console.log(s);
+    //
+    //        if (s[0] == 'M')
+    //        {
+    //            if (typeof(curve[i+1]) != "undefined" && curve[i+1][0] == "C")
+    //            {
+    //                startX = s[1];
+    //                startY = s[2];
+    //                if (startX < minx) minx = startX;
+    //                if (startX > maxx) maxx = startX;
+    //                if (startY < miny) miny = startY;
+    //                if (startY > maxy) maxy = startY;
+    //            }
+    //        }
+    //        else
+    //
+    //        if (s[0] == 'C')
+    //        {
+    //            isC = true;
+    //            //if(i==val)
+    //            //{
+    //            bounds = getBoundsOfCurve(startX, startY, s[1], s[2], s[3], s[4], s[5], s[6]);
+    //            //bounds = calculate_standard_bbox(startX, startY, s[1], s[2], s[3], s[4], s[5], s[6]);
+    //            //bounds = cubic_extrema_external(startX, startY, s[1], s[2], s[3], s[4], s[5], s[6]);
+    //
+    //            ////console.log(JSON.stringify(bounds));
+    //            if (bounds.left < minx) minx = bounds.left;
+    //            if (bounds.right > maxx) maxx = bounds.right;
+    //            if (bounds.top < miny) miny = bounds.top;
+    //            if (bounds.bottom > maxy) maxy = bounds.bottom;
+    //            startX = s[5];
+    //            startY = s[6];
+    //        }
+    //        ////console.log(JSON.stringify(bounds));
+    //        //if(s[0] == 'C')
+    //        //{
+    //        //  currentX = s[5], currentY = s[6];
+    //        //}
+    //
+    //    }
+    //    //    left: this.left + (minX + deltaX / 2),
+    //    //          top: this.top + (minY + deltaY / 2),
+    //
+    //    if (!isC) minx = maxx = miny = maxy = 0;
+    //
+    //    var boundsFinal = {
+    //        left: minx,
+    //        top: miny,
+    //        width: maxx - minx,
+    //        height: maxy - miny
+    //    };
+    //    ////console.log(JSON.stringify(boundsFinal));
+    //    return boundsFinal;
+    //}
+    //window.getBoundsOfPath = getBoundsOfPath;
+    //window.getBoundsOfCurve = getBoundsOfCurve;
 }
 
 

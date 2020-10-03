@@ -23,9 +23,9 @@
         "package": "Swift Color Swatches",
         "repositoryURL": "https://github.com/RougeWare/Swift-Color-Swatches.git",
         "state": {
-          "branch": "feature/MVP",
-          "revision": "28c5b6d3df5e6ef2bc8873e997ea8f476fa43ecf",
-          "version": null
+          "branch": null,
+          "revision": "ad928f9fb08c2e0eb30e2762a1d7ceda38cb6f20",
+          "version": "1.0.0"
         }
       },
       {
@@ -41,14 +41,14 @@
         "package": "Swift Drawing Tools",
         "repositoryURL": "https://github.com/BenLeggiero/Swift-Drawing-Tools.git",
         "state": {
-          "branch": "feature/MVP",
-          "revision": "185225c89b6fd43fcbba8572bed1ccccabab607a",
-          "version": null
+          "branch": null,
+          "revision": "a3342704cdd5328784002aa03369fd0601f282d4",
+          "version": "1.1.1"
         }
       },
       {
         "package": "FunctionTools",
-        "repositoryURL": "https://github.com/RougeWare/Swift-Function-Tools.git",
+        "repositoryURL": "https://github.com/RougeWare/Swift-Function-Tools",
         "state": {
           "branch": null,
           "revision": "dbdd1a663de328a6e58871c778903201ec133372",
@@ -87,8 +87,8 @@
         "repositoryURL": "https://github.com/RougeWare/Swift-Optional-Tools.git",
         "state": {
           "branch": null,
-          "revision": "8647336830e25b40e377171fa0f2e3db56d55175",
-          "version": "1.1.2"
+          "revision": "e930eccb0109de044b0c227a62d3df6c5e072f76",
+          "version": "1.1.3"
         }
       },
       {
@@ -96,8 +96,8 @@
         "repositoryURL": "https://github.com/RougeWare/Swift-Rectangle-Tools.git",
         "state": {
           "branch": null,
-          "revision": "428ced0b49c64190a9cd1473b21644fb97b887c3",
-          "version": "2.8.0"
+          "revision": "28d5ec88e786f65f3127c56049045c6b17fc3121",
+          "version": "2.9.0"
         }
       }
     ]

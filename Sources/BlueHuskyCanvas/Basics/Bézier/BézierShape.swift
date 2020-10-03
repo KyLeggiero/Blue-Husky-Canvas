@@ -1,8 +1,9 @@
 //
 //  BézierShape.swift
-//  
+//  Blue Husky Canvas
 //
 //  Created by Ben Leggiero on 2020-02-15.
+//  Copyright © 2020 Ben Leggiero BH-1-PS
 //
 
 import Foundation
