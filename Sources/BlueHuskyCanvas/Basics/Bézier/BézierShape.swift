@@ -7,6 +7,8 @@
 //
 
 import Foundation
+
+import CollectionTools
 import NonEmpty
 
 
@@ -34,7 +36,7 @@ public extension BézierShape {
     func calculateFrame() -> CanvasRect {
         paths
             .lazy
-            .map { $0.calculateFrame() }
+            .map(BezierPath.calculateFrame)
             .grandUnion()
             ?? .init(origin: .zero, size: .zero)
     }
